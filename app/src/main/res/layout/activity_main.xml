@@ -6,287 +6,176 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--cuadro de resultado-->
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="@drawable/text_modify"
+        android:gravity="center"
+        android:text="0"
+        android:textColorHint="#1AFF94"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="39dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/v4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="40dp" />
+        app:layout_constraintGuide_end="480dp" />
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="189dp" />
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/h1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"/>
+        <Button
+            android:id="@+id/botonC"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:onClick="limpiadoC"
+            android:text="C"
+            app:layout_column="0"
+            app:layout_row="0" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/v1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3"/>
+        <Button
+            android:id="@+id/botonDEL"
+            android:onClick="borrar"
+            android:text="DEL"
+            app:layout_column="1"
+            app:layout_row="0"
+            app:layout_rowSpan="2"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/v2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"/>
+        <Button
+            android:id="@+id/botonDIV"
+            android:onClick="operacionDividir"
+            android:text="/"
+            app:layout_column="3"
+            app:layout_row="0" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.7"/>
+        <Button
+            android:id="@+id/boton7"
+            android:onClick="escribir7"
+            android:text="7"
+            app:layout_column="0"
+            app:layout_row="1" />
 
-    <TextView
-        android:id="@+id/resultado"
-        android:layout_width="304dp"
-        android:layout_height="153dp"
-        android:text="0"
-        android:gravity="center|center_vertical"
-        android:textColorHint="#1AFF94"
-        android:background="@drawable/text_modify"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/h1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/boton8"
+            android:onClick="escribir8"
+            android:text="8"
+            app:layout_column="1"
+            app:layout_row="1" />
 
-    <Button
-        android:id="@+id/botonC"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="C"
-        android:onClick="limpiadoC"
-        android:backgroundTint="@android:color/holo_red_dark"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v1"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/h1" />
+        <Button
+            android:id="@+id/boton9"
+            android:onClick="escribir9"
+            android:text="9"
+            app:layout_column="2"
+            app:layout_row="1" />
 
-    <Button
-        android:id="@+id/botonDEL"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="DEL"
-        android:onClick="borrar"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline15"
-        app:layout_constraintStart_toStartOf="@+id/v1"
-        app:layout_constraintTop_toTopOf="@+id/h1" />
+        <Button
+            android:id="@+id/botonMULT"
+            android:onClick="operacionMultiplicar"
+            android:text="*"
+            app:layout_column="3"
+            app:layout_row="1" />
 
-    <Button
-        android:id="@+id/botonDIV"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="/"
-        android:onClick="operacionDividir"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v4"
-        app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toTopOf="@+id/h1" />
+        <Button
+            android:id="@+id/boton4"
+            android:onClick="escribir4"
+            android:text="4"
+            app:layout_column="0"
+            app:layout_row="2" />
 
-    <Button
-        android:id="@+id/boton7"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="7"
-        android:onClick="escribir7"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v1"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/botonC" />
+        <Button
+            android:id="@+id/boton5"
+            android:onClick="escrbir5"
+            android:text="5"
+            app:layout_column="1"
+            app:layout_row="2" />
 
-    <Button
-        android:id="@+id/boton8"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="8"
-        android:onClick="escribir8"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v2"
-        app:layout_constraintStart_toStartOf="@+id/v1"
-        app:layout_constraintTop_toBottomOf="@id/botonDEL"/>
+        <Button
+            android:id="@+id/boton6"
+            android:onClick="escribir6"
+            android:text="6"
+            app:layout_column="2"
+            app:layout_row="2" />
 
-    <Button
-        android:id="@+id/boton9"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="9"
-        android:onClick="escribir9"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline15"
-        app:layout_constraintStart_toStartOf="@+id/v2"
-        app:layout_constraintTop_toBottomOf="@id/botonDEL"/>
+        <Button
+            android:id="@+id/botonMENOS"
+            android:onClick="operacionResta"
+            android:text="-"
+            app:layout_column="3"
+            app:layout_row="2" />
 
-    <Button
-        android:id="@+id/botonMULT"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="4dp"
-        android:text="*"
-        android:onClick="operacionMultiplicar"
-        app:layout_constraintEnd_toStartOf="@+id/v4"
-        app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toBottomOf="@id/botonDIV" />
+        <Button
+            android:id="@+id/boton1"
+            android:onClick="escribir1"
+            android:text="1"
+            app:layout_column="0"
+            app:layout_row="4" />
 
-    <Button
-        android:id="@+id/boton4"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="4"
-        android:onClick="escribir4"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v1"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@id/boton7" />
+        <Button
+            android:id="@+id/boton2"
+            android:onClick="escrbir2"
+            android:text="2"
+            app:layout_column="1"
+            app:layout_row="4" />
 
-    <Button
-        android:id="@+id/boton5"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="4dp"
-        android:text="5"
-        android:onClick="escrbir5"
-        app:layout_constraintEnd_toStartOf="@+id/v2"
-        app:layout_constraintStart_toStartOf="@+id/v1"
-        app:layout_constraintTop_toBottomOf="@id/boton8"/>
+        <Button
+            android:id="@+id/boton3"
+            android:onClick="escrbir3"
+            android:text="3"
+            app:layout_column="2"
+            app:layout_row="4" />
 
-    <Button
-        android:id="@+id/boton6"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="4dp"
-        android:text="6"
-        android:onClick="escribir6"
-        app:layout_constraintEnd_toStartOf="@+id/guideline15"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/v2"
-        app:layout_constraintTop_toBottomOf="@+id/boton9" />
+        <Button
+            android:id="@+id/botonMAS"
+            android:onClick="operacionSumar"
+            android:text="+"
+            app:layout_column="3"
+            app:layout_row="4" />
 
-    <Button
-        android:id="@+id/botonMENOS"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="-"
-        android:onClick="operacionResta"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v4"
-        app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toBottomOf="@+id/botonMULT" />
+        <Button
+            android:id="@+id/boton0"
+            android:onClick="escribir0"
+            android:text="0"
+            app:layout_column="0"
+            app:layout_row="5"
+            app:layout_rowSpan="2" />
 
-    <Button
-        android:id="@+id/boton1"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="1"
-        android:onClick="escribir1"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v1"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/boton4" />
+        <Button
+            android:id="@+id/botonPUNTO"
+            android:onClick="escribirPunto"
+            android:text="."
+            app:layout_column="2"
+            app:layout_row="5" />
 
-    <Button
-        android:id="@+id/boton2"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="2"
-        android:onClick="escrbir2"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v2"
-        app:layout_constraintStart_toStartOf="@+id/v1"
-        app:layout_constraintTop_toBottomOf="@+id/boton5" />
+        <Button
+            android:id="@+id/botonIGUAL"
+            android:onClick="mostrarResultado"
+            android:text="="
+            app:layout_column="3"
+            app:layout_row="5" />
+    </androidx.gridlayout.widget.GridLayout>
 
-    <Button
-        android:id="@+id/boton3"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="3"
-        android:onClick="escrbir3"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline15"
-        app:layout_constraintStart_toStartOf="@+id/v2"
-        app:layout_constraintTop_toBottomOf="@+id/boton6" />
 
-    <Button
-        android:id="@+id/botonMAS"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="+"
-        android:onClick="operacionSumar"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v4"
-        app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toBottomOf="@+id/botonMENOS" />
-
-    <Button
-        android:id="@+id/botonIGUAL"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="="
-        android:onClick="mostrarResultado"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v4"
-        app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toBottomOf="@+id/botonMAS" />
-
-    <Button
-        android:id="@+id/boton0"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="0"
-        android:onClick="escribir0"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/v2"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/boton2" />
-
-    <Button
-        android:id="@+id/botonPUNTO"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="."
-        android:onClick="escribirPunto"
-        android:layout_marginHorizontal="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline15"
-        app:layout_constraintStart_toStartOf="@+id/v2"
-        app:layout_constraintTop_toBottomOf="@+id/boton3" />
-
-<!--2º PARTE SWTCH MODO NOCTURNO-->
+    <!--2º PARTE SWTCH MODO NOCTURNO
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cambiar tema"
-        app:layout_constraintEnd_toStartOf="@+id/v4"
-        app:layout_constraintStart_toStartOf="@+id/guideline15"
         app:layout_constraintTop_toBottomOf="@id/botonPUNTO"
         android:layout_marginTop="50dp"
-        android:checked="false"/>
-
+        android:checked="false"/> -->
 </androidx.constraintlayout.widget.ConstraintLayout>
